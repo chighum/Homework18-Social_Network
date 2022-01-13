@@ -1,12 +1,22 @@
 const { User, Thought } = require("../models");
 
 module.exports = {
+  // /api/users
   // GET all users
   getAllUsers(req, res) {
     User.find()
       .then((users) => res.status(200).json(users))
       .catch((err) => res.status(500).json(err));
   },
+
+  // POST a new user
+  postUser(req, res) {
+    User.create(req.body)
+      .then((user) => res.status(200).json(user))
+      .catch((err) => res.status(500).json(err));
+  },
+
+  // /api/users/:userId
   // GET a single user by its _id and populated thought and friend data
   getOneUser(req, res) {
     User.findOne({ _id: req.params.userId })
@@ -18,12 +28,6 @@ module.exports = {
           ? res.status(404).json({ message: "No user with that ID" })
           : res.status(200).json(user)
       )
-      .catch((err) => res.status(500).json(err));
-  },
-  // POST a new user
-  postUser(req, res) {
-    User.create(req.body)
-      .then((user) => res.status(200).json(user))
       .catch((err) => res.status(500).json(err));
   },
 
@@ -53,6 +57,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+
   // /api/users/:userId/friends/:friendId
 
   // POST a new friend to a user's friend list
