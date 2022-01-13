@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
-const Thoughts = require("./Thoughts");
-const Friends = require("./Friends");
+// const Thoughts = require("./Thoughts");
 
 // Schema to create User model
 const userSchema = new Schema(
@@ -22,8 +21,18 @@ const userSchema = new Schema(
         message: (data) => `${data.value} is not a valid email!`,
       },
     },
-    thoughts: [Thoughts],
-    friends: [Friends],
+    thoughts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "thought",
+      },
+    ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "user",
+      },
+    ],
   },
   {
     toJSON: {
