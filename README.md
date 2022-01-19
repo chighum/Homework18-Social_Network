@@ -29,7 +29,7 @@ This application is not deployed to the web, so you will have to follow the inst
 
 ![Thought routes tested in Insomnia](./images/ThoughtRoutes.gif)
 
-You can also view all three videos [here](https://)
+You can also view all three videos [here](https://drive.google.com/drive/folders/1HWpC25YkR-_FqQpN5fwbGQdjNFJpcL_A?usp=sharing)
 
 ## License
 
