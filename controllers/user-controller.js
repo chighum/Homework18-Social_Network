@@ -33,7 +33,7 @@ module.exports = {
 
   // PUT to update a user by its _id
   putUser(req, res) {
-    User.findOneAndUpdate({ _id: req.params.userId }, req.body)
+    User.findOneAndRemove({ _id: req.params.userId }, req.body)
       .then((user) =>
         !user
           ? res.status(404).json({ message: "No user with that ID" })
