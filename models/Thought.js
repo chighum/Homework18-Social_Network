@@ -16,8 +16,6 @@ const reactionSchema = new Schema({
   },
 });
 
-const Reactions = model("reactions", reactionSchema);
-
 const thoughtSchema = new Schema(
   {
     thoughtText: {
@@ -33,10 +31,11 @@ const thoughtSchema = new Schema(
       type: String,
       required: true,
     },
-    reactions: [Reactions],
+    reactions: [reactionSchema],
   },
   {
     toJSON: {
+      getters: true,
       virtuals: true,
     },
   }

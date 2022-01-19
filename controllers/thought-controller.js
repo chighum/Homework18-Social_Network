@@ -59,7 +59,7 @@ module.exports = {
       .then((response) =>
         !response
           ? res.status(404).json({ message: "No thought with that ID" })
-          : res.status(200).json({ message: "Thought deleted!" })
+          : res.status(200).json({ message: "Thought successfully deleted!" })
       )
       .catch((err) => res.status(500).json(err));
   },
@@ -87,14 +87,14 @@ module.exports = {
   deleteReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
-      { $pull: { reactions: reactions._id } }
+      { $pull: { reactions: { _id: req.params.reactionId } } }
     )
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: "No thought with that ID" })
           : res
               .status(200)
-              .json({ message: "Thought succesfully updated with reaction!" })
+              .json({ message: "Reaction successfully deleted from thought!" })
       )
       .catch((err) => res.status(500).json(err));
   },
