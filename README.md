@@ -1,7 +1,7 @@
 # Social Network API
 
 ![MIT](https://img.shields.io/badge/license-MIT-blue)
-  
+
 ## Description
 
 This project is an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. This project uses Express.js for routing, a MongoDB database, and the Mongoose ODM.
@@ -14,17 +14,25 @@ This project is an API for a social network web application where users can shar
 - [Contributing](#contributing)
 - [Testing](#testing)
 - [Questions](#questions)
-  
+
 ## Installation
 
-Clone the repository, run `npm i` to install the dependencies, and run `npm run start` to launch to server.
+Clone the repository, run `npm i` to install the dependencies, `npm run seed` to seed the database, and `npm run start` to launch to server. You can see a walkthrough video of initializing the app below:
+
+![User walk through of app initialization](./images/AppInit.gif)
 
 ## Usage
 
 This application is not deployed to the web, so you will have to follow the installation instructions above in order to use it for yourself. Otherwise, you can see walk through videos of testing in insomnia below:
 
+![User routes tested in Insomnia](./images/UserRoutes.gif)
+
+![Thought routes tested in Insomnia](./images/ThoughtRoutes.gif)
+
+You can also view all three videos [here](https://)
+
 ## License
-  
+
 This application is covered under the MIT license.
 
 ## Contributing
