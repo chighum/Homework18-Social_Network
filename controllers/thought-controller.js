@@ -11,11 +11,11 @@ module.exports = {
 
   // POST to create a new thought and push the thought's _id to the associated user's thoughts array
   postThought(req, res) {
-    // req.body needs userId
+    // req.body needs username
     Thought.create(req.body)
       .then((thought) =>
         User.findOneAndUpdate(
-          { _id: req.body.userId },
+          { username: req.body.username },
           { $push: { thoughts: thought._id } }
         )
       )
